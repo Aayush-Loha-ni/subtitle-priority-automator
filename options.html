@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subtitle Priority Automator — Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="dashboard-container">
+
+    <!-- Header with subtitle bar -->
+    <header class="dashboard-header">
+      <div class="subtitle-bar">
+        <span class="subtitle-label">SUBTITLE</span>
+        <span class="subtitle-text">Priority Automator</span>
+        <span class="subtitle-label secondary">v1.0.0</span>
+      </div>
+      <p class="header-tagline">Choose your language, we choose the subs.</p>
+    </header>
+
+    <!-- Language Priority -->
+    <section class="settings-card">
+      <h2 class="card-title">
+        <svg class="card-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#e8b835" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          <line x1="9" y1="10" x2="15" y2="10"/>
+          <line x1="12" y1="7" x2="12" y2="13"/>
+        </svg>
+        Language Priority
+      </h2>
+      <p class="card-desc">Reorder languages — higher priority first.</p>
+
+      <div class="lang-list" id="langList">
+        <div class="empty-msg">No languages selected. Add languages below.</div>
+      </div>
+    </section>
+
+    <!-- Add Languages -->
+    <section class="settings-card">
+      <h2 class="card-title">
+        <svg class="card-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#e8b835" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="16"/>
+          <line x1="8" y1="12" x2="16" y2="12"/>
+        </svg>
+        Add Languages
+      </h2>
+      <p class="card-desc">Pick from common languages or enter a custom one.</p>
+
+      <div class="form-group">
+        <label for="langSelect">Common Languages</label>
+        <div class="add-row">
+          <select id="langSelect">
+            <option value="">— Select a language —</option>
+            <option value="English">English</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Spanish">Spanish</option>
+            <option value="French">French</option>
+            <option value="German">German</option>
+            <option value="Korean">Korean</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Italian">Italian</option>
+            <option value="Russian">Russian</option>
+            <option value="Arabic">Arabic</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Polish">Polish</option>
+            <option value="Turkish">Turkish</option>
+            <option value="Swedish">Swedish</option>
+            <option value="Danish">Danish</option>
+            <option value="Finnish">Finnish</option>
+            <option value="Norwegian">Norwegian</option>
+            <option value="Czech">Czech</option>
+            <option value="Thai">Thai</option>
+            <option value="Vietnamese">Vietnamese</option>
+            <option value="Indonesian">Indonesian</option>
+            <option value="Romanian">Romanian</option>
+            <option value="Hungarian">Hungarian</option>
+            <option value="Ukrainian">Ukrainian</option>
+            <option value="Greek">Greek</option>
+          </select>
+          <button class="btn-secondary" id="addBtn">+ Add</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="customInput">Custom Language</label>
+        <div class="add-row">
+          <input type="text" id="customInput" placeholder="e.g., Catalan" maxlength="50">
+          <button class="btn-secondary" id="customAddBtn">+ Add Custom</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Save -->
+    <div class="save-area">
+      <button class="btn-primary" id="btnSave">Save Settings</button>
+      <span class="save-status hidden" id="saveStatus">Saved</span>
+    </div>
+
+    <!-- Support -->
+    <section class="settings-card support-card">
+      <h2 class="card-title">
+        <svg class="card-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#e8b835" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        Support
+      </h2>
+      <p class="card-desc">If this extension helps with your watching, consider buying me a coffee!</p>
+      <a href="https://ko-fi.com/aayume" target="_blank" rel="noopener" class="btn-primary kofi-btn">Donate via Ko-fi</a>
+    </section>
+
+    <!-- About -->
+    <section class="settings-card about-card">
+      <h2 class="card-title">
+        <svg class="card-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#e8b835" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        About
+      </h2>
+      <p class="about-text">
+        <strong>Subtitle Priority Automator</strong><br>
+        Automatically selects your preferred subtitle language on streaming sites.<br>
+        All data is stored locally — nothing is sent to any server.
+      </p>
+    </section>
+
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

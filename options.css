@@ -1,0 +1,356 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #0a0a0f;
+  color: #ffffff;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Container ---- */
+.dashboard-container {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Header / Subtitle Bar ---- */
+.dashboard-header {
+  text-align: center;
+  padding: 24px 0 20px;
+}
+
+.subtitle-bar {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  background: #181825;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.subtitle-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+}
+
+.subtitle-label.secondary {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.subtitle-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+.subtitle-text::before {
+  content: "\00a0\203a\00a0";
+  color: #e8b835;
+  font-weight: 700;
+}
+
+.header-tagline {
+  margin-top: 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 400;
+}
+
+/* ---- Settings Cards ---- */
+.settings-card {
+  background: #141420;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 20px 22px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.settings-card:hover {
+  border-color: rgba(232, 184, 53, 0.15);
+  box-shadow: 0 0 0 1px rgba(232, 184, 53, 0.04);
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.card-icon {
+  flex-shrink: 0;
+}
+
+.card-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* ---- Form Elements ---- */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #e8b835;
+  box-shadow: 0 0 0 2px rgba(232, 184, 53, 0.12);
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.18);
+}
+
+.form-group select option {
+  background: #141420;
+  color: #ffffff;
+}
+
+/* ---- Add Row ---- */
+.add-row {
+  display: flex;
+  gap: 8px;
+}
+
+.add-row select {
+  flex: 1;
+}
+
+.add-row input {
+  flex: 1;
+}
+
+/* ---- Language List ---- */
+.lang-list {
+  min-height: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.lang-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  font-size: 13px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.lang-item:last-child {
+  margin-bottom: 0;
+}
+
+.lang-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(232, 184, 53, 0.12);
+}
+
+.lang-name {
+  flex: 1;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.lang-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.lang-actions button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.lang-actions button:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(232, 184, 53, 0.2);
+  color: #ffffff;
+}
+
+.lang-actions button:disabled {
+  opacity: 0.2;
+  cursor: default;
+  pointer-events: none;
+}
+
+.lang-actions .remove:hover {
+  background: rgba(255, 77, 77, 0.12);
+  border-color: rgba(255, 77, 77, 0.25);
+  color: #ff4d4d;
+}
+
+.empty-msg {
+  text-align: center;
+  padding: 18px 12px;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+}
+
+/* ---- Buttons ---- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 30px;
+  background: #e8b835;
+  border: none;
+  border-radius: 8px;
+  color: #0a0a0f;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: #f0c850;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(232, 184, 53, 0.25);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background: #e8b835;
+  border-color: #e8b835;
+  color: #0a0a0f;
+}
+
+/* ---- Ko-fi Button ---- */
+.kofi-btn {
+  width: 100%;
+  margin-top: 4px;
+}
+
+/* ---- Save Area ---- */
+.save-area {
+  text-align: center;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.save-status {
+  font-size: 13px;
+  color: #4ade80;
+  font-weight: 600;
+  transition: opacity 0.25s;
+}
+
+.save-status.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---- About ---- */
+.about-card {
+  text-align: center;
+  padding: 18px 22px;
+}
+
+.about-text {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.8;
+}
+
+.about-text strong {
+  color: #ffffff;
+  font-weight: 600;
+}

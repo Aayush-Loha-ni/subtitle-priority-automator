@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Subtitle Priority Automator",
+  "version": "1.0.0",
+  "description": "Automatically selects your preferred subtitle language on streaming sites.",
+  "permissions": ["storage"],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'"
+  },
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.netflix.com/*",
+    "*://*.primevideo.com/*",
+    "*://*.disneyplus.com/*",
+    "*://*.hulu.com/*",
+    "*://*.crunchyroll.com/*",
+    "*://*.vimeo.com/*",
+    "*://*.twitch.tv/*",
+    "*://*.donkey.to/*"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Subtitle Priority Automator",
+    "default_icon": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.netflix.com/*",
+        "*://*.primevideo.com/*",
+        "*://*.disneyplus.com/*",
+        "*://*.hulu.com/*",
+        "*://*.crunchyroll.com/*",
+        "*://*.vimeo.com/*",
+        "*://*.twitch.tv/*",
+        "*://*.donkey.to/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "128": "icons/icon128.png"
+  }
+}

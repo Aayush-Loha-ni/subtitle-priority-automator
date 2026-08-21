@@ -1,0 +1,350 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #0a0a0f;
+  color: #ffffff;
+  width: 340px;
+  min-height: 280px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Container ---- */
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 14px 10px;
+  gap: 12px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Header ---- */
+.popup-header {
+  text-align: center;
+}
+
+.subtitle-bar {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  background: #181825;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.subtitle-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+}
+
+.subtitle-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
+.subtitle-text::before {
+  content: "\00a0\203a\00a0";
+  color: #e8b835;
+  font-weight: 700;
+}
+
+/* ---- Start / Stop Button ---- */
+.start-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  background: #4ade80;
+  border: none;
+  border-radius: 10px;
+  color: #0a0a0f;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 12px rgba(74, 222, 128, 0.3);
+}
+
+.start-btn:hover {
+  background: #6ee7a0;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 20px rgba(74, 222, 128, 0.4);
+}
+
+.start-btn:active {
+  transform: scale(0.97);
+}
+
+.start-btn.off {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.5);
+  box-shadow: none;
+}
+
+.start-btn.off:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.start-btn.off .start-icon {
+  opacity: 0.4;
+}
+
+.start-icon {
+  display: flex;
+  align-items: center;
+}
+
+/* ---- Language Section ---- */
+.lang-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lang-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lang-heading {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.lang-count {
+  font-size: 10px;
+  padding: 1px 7px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+}
+
+.lang-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 132px;
+  overflow-y: auto;
+}
+
+.lang-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.lang-item .num {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+  width: 16px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.lang-item .name {
+  flex: 1;
+  color: #ffffff;
+}
+
+.lang-item .badge {
+  font-size: 9px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(232, 184, 53, 0.15);
+  color: #e8b835;
+  font-weight: 700;
+}
+
+.remove-btn {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.remove-btn:hover {
+  background: rgba(255, 77, 77, 0.15);
+  color: #ff4d4d;
+}
+
+.add-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.add-row select,
+.add-row input {
+  flex: 1;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 11px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-row select:focus,
+.add-row input:focus {
+  border-color: #e8b835;
+  box-shadow: 0 0 0 2px rgba(232, 184, 53, 0.12);
+}
+
+.add-row select option {
+  background: #141420;
+  color: #ffffff;
+}
+
+.add-row input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.add-btn {
+  padding: 7px 12px;
+  background: rgba(232, 184, 53, 0.12);
+  border: 1px solid rgba(232, 184, 53, 0.2);
+  border-radius: 6px;
+  color: #e8b835;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.add-btn:hover {
+  background: #e8b835;
+  color: #0a0a0f;
+  border-color: #e8b835;
+}
+
+.empty-msg {
+  text-align: center;
+  padding: 14px 10px;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 11px;
+}
+
+/* ---- Footer ---- */
+.popup-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.footer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.footer-btn:hover {
+  color: #e8b835;
+  background: rgba(232, 184, 53, 0.08);
+}
+
+.footer-btn svg {
+  opacity: 0.6;
+}
+
+.footer-btn:hover svg {
+  opacity: 1;
+}
+
+.donate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 10px;
+  background: #e8b835;
+  border: none;
+  border-radius: 10px;
+  color: #0a0a0f;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 12px rgba(232, 184, 53, 0.3);
+}
+
+.donate-btn:hover {
+  background: #f0c850;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 20px rgba(232, 184, 53, 0.4);
+}
+
+.donate-btn:active {
+  transform: scale(0.97);
+}
+
+.donate-btn svg {
+  opacity: 1;
+}
+
+.version {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.15);
+}

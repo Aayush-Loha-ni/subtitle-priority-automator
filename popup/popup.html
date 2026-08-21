@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subtitle Priority Automator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="subtitle-bar">
+        <span class="subtitle-label">SUBTITLE</span>
+        <span class="subtitle-text">Priority</span>
+      </div>
+    </header>
+
+    <!-- Start / Stop -->
+    <button class="start-btn" id="startBtn">
+      <span class="start-icon" id="startIcon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </span>
+      <span class="start-text" id="startText">Start Extension</span>
+    </button>
+
+    <!-- Language List -->
+    <section class="lang-section">
+      <div class="lang-header">
+        <span class="lang-heading">Language Priority</span>
+        <span class="lang-count" id="langCount">0</span>
+      </div>
+      <div class="lang-list" id="langList">
+        <div class="empty-msg">No languages configured</div>
+      </div>
+      <div class="add-row">
+        <select id="langSelect">
+          <option value="">— Add language —</option>
+          <option value="English">English</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Spanish">Spanish</option>
+          <option value="French">French</option>
+          <option value="German">German</option>
+          <option value="Korean">Korean</option>
+          <option value="Chinese">Chinese</option>
+          <option value="Portuguese">Portuguese</option>
+          <option value="Italian">Italian</option>
+          <option value="Russian">Russian</option>
+          <option value="Arabic">Arabic</option>
+          <option value="Hindi">Hindi</option>
+          <option value="Dutch">Dutch</option>
+          <option value="Polish">Polish</option>
+          <option value="Turkish">Turkish</option>
+          <option value="Swedish">Swedish</option>
+          <option value="Danish">Danish</option>
+          <option value="Finnish">Finnish</option>
+          <option value="Norwegian">Norwegian</option>
+          <option value="Czech">Czech</option>
+          <option value="Thai">Thai</option>
+          <option value="Vietnamese">Vietnamese</option>
+          <option value="Indonesian">Indonesian</option>
+          <option value="Romanian">Romanian</option>
+          <option value="Hungarian">Hungarian</option>
+          <option value="Ukrainian">Ukrainian</option>
+          <option value="Greek">Greek</option>
+        </select>
+        <button class="add-btn" id="addBtn">+ Add</button>
+      </div>
+      <div class="add-row">
+        <input type="text" id="customInput" placeholder="Custom (e.g., Catalan)" maxlength="50">
+        <button class="add-btn" id="customAddBtn">+ Add</button>
+      </div>
+    </section>
+
+    <!-- Donate -->
+    <a href="https://ko-fi.com/aayume" target="_blank" rel="noopener" class="donate-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+      Support on Ko-fi
+    </a>
+
+    <!-- Actions -->
+    <footer class="popup-footer">
+      <button class="footer-btn" id="btnSettings">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 10a2 2 0 100-4 2 2 0 000 4z"/>
+          <path fill-rule="evenodd" d="M6.5.8a1 1 0 011 0l.4.23a1 1 0 001 .04l.42-.18a1 1 0 01.86.04l.5.8a1 1 0 01-.14.97l-.24.4a1 1 0 000 .96l.24.4a1 1 0 01.14.97l-.5.8a1 1 0 01-.86.04l-.42-.18a1 1 0 00-1 .04l-.4.23a1 1 0 01-1 0l-.4-.23a1 1 0 00-1-.04l-.42.18a1 1 0 01-.86-.04l-.5-.8a1 1 0 01.14-.97l.24-.4a1 1 0 000-.96l-.24-.4a1 1 0 01-.14-.97l.5-.8a1 1 0 01.86-.04l.42.18a1 1 0 001-.04L6.5.8z"/>
+        </svg>
+        Settings
+      </button>
+      <span class="version">v1.0.0</span>
+    </footer>
+
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
